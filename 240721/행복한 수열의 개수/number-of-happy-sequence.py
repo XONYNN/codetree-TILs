@@ -33,5 +33,8 @@ for i in range(N):
         if cnt2 == M:
             ANSWER += 1
             break
-        
+
+if M == 1:
+    ANSWER = 2 * N
+    
 print(ANSWER)
