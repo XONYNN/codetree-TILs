@@ -39,6 +39,5 @@ for i in range(2, N):
                     cur_x, cur_y = cur_x + 1, cur_y + 1
                     load += [(cur_x, cur_y)]
                 
-                MAX = max(0, sum_value(load, G))
-
+                MAX = max(MAX, sum_value(load, G))
 print(MAX)
