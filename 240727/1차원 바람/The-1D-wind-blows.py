@@ -8,6 +8,8 @@ def shift(r, d):
     else:
         C[r-1] = C[r-1] + [C[r-1][0]]
         del C[r-1][0]
+    
+    return 1
 
 for _ in range(Q):
     r, d = input().split()
@@ -20,20 +22,28 @@ for _ in range(Q):
         if new_d == 'L': new_d = 'R'
         else: new_d = 'L'
 
+        check = 0
+
         for j in range(M):
             if C[i-1][j] == C[i][j]:
-                shift(i, new_d)
+                check = shift(i, new_d)
                 break
+        
+        if check == 0: break
     
     new_d = d
     for i in range(r+1, N+1):
         if new_d == 'L': new_d = 'R'
         else: new_d = 'L'
+    
+        check = 0
 
         for j in range(M):
             if C[i-1][j] == C[i-2][j]:
-                shift(i, new_d)
+                check = shift(i, new_d)
                 break
+                
+        if check == 0: break
 
 for i in range(N):
     print(*C[i], sep=" ")
