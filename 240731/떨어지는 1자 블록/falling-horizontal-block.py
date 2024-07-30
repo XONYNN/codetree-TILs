@@ -9,7 +9,7 @@ for i in range(N):
                 x, y = i, j
 
 if x == -1 and y == -1:
-    x = N-1
+    x = N
 
 for i in range(K-1, K+M-1):
     G[x-1][i] = 1
