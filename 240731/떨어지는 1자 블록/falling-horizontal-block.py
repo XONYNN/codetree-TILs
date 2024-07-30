@@ -8,6 +8,9 @@ for i in range(N):
             if G[i][j] == 1:
                 x, y = i, j
 
+if x == -1 and y == -1:
+    x = N-1
+
 for i in range(K-1, K+M-1):
     G[x-1][i] = 1
 
